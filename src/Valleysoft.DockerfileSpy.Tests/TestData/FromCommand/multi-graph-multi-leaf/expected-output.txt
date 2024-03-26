@@ -1,0 +1,28 @@
+﻿[
+  {
+    "$id": "1",
+    "fromInstruction": {
+      "$id": "2",
+      "imageName": "base",
+      "stageName": "test"
+    },
+    "parent": {
+      "$id": "3",
+      "fromInstruction": {
+        "$id": "4",
+        "imageName": "base-image1",
+        "stageName": "base"
+      }
+    }
+  },
+  {
+    "$id": "5",
+    "fromInstruction": {
+      "$id": "6",
+      "imageName": "base"
+    },
+    "parent": {
+      "$ref": "3"
+    }
+  }
+]

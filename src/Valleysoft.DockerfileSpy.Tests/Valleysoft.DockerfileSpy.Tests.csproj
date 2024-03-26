@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="TestData\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="TestData\FromCommand\multi-graph-multi-leaf\command.txt" />
+    <None Remove="TestData\FromCommand\multi-graph-multi-leaf\Dockerfile" />
+    <None Remove="TestData\FromCommand\multi-graph-multi-leaf\expected-output.txt" />
+    <None Remove="TestData\FromCommand\multi-graph\command.txt" />
+    <None Remove="TestData\FromCommand\multi-graph\Dockerfile" />
+    <None Remove="TestData\FromCommand\multi-graph\expected-output.txt" />
+    <None Remove="TestData\FromCommand\multi-flat\command.txt" />
+    <None Remove="TestData\FromCommand\multi-flat\Dockerfile" />
+    <None Remove="TestData\FromCommand\multi-flat\expected-output.txt" />
+    <None Remove="TestData\FromCommand\single-flat-custom-path\command.txt" />
+    <None Remove="TestData\FromCommand\single-flat-custom-path\Dockerfile.custom" />
+    <None Remove="TestData\FromCommand\single-flat-custom-path\expected-output.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Valleysoft.DockerfileSpy\Valleysoft.DockerfileSpy.csproj" />
+  </ItemGroup>
+
+</Project>
