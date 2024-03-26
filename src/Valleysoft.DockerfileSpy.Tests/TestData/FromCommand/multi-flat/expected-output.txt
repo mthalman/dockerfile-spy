@@ -1,0 +1,9 @@
+﻿[
+  {
+    "imageName": "base-image1",
+    "stageName": "base"
+  },
+  {
+    "imageName": "base"
+  }
+]
