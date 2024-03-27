@@ -55,7 +55,6 @@ jobs:
           exeName="dfspy-${{ github.event.inputs.packageVersion }}-${{ matrix.rid }}${programExt}"
           echo "EXE_NAME=${exeName}" >> $GITHUB_ENV
           mv ${{ github.workspace }}/publish/dfspy${programExt} ${{ github.workspace }}/publish/${exeName}
-          rm ${{ github.workspace }}/publish/dfspy.pdb
       
       - name: Generate checksum
         run: sha256sum ${EXE_NAME} >${EXE_NAME}.sha256sum
