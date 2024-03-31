@@ -14,14 +14,6 @@ public class FromCommand(IConsole console) : CommandWithOptions<FromCommandOptio
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
     };
 
-    private static readonly JsonSerializerOptions s_jsonSerializerOptionsForGraphLayout = new()
-    {
-        WriteIndented = true,
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-        ReferenceHandler = ReferenceHandler.Preserve,
-    };
-
     private readonly IConsole _console = console;
 
     protected override Task ExecuteAsync() => ExecuteCoreAsync();
@@ -40,20 +32,17 @@ public class FromCommand(IConsole console) : CommandWithOptions<FromCommandOptio
             .ToList();
 
         object result;
-        JsonSerializerOptions serializerOptions;
         if (Options.LayoutType == FromLayoutType.Graph)
         {
             Models.FromInstructionGraphNode[] leafGraphNodes = GetFromInstructionGraph(fromInstructionModels);
             result = leafGraphNodes.ToArray();
-            serializerOptions = s_jsonSerializerOptionsForGraphLayout;
         }
         else
         {
             result = fromInstructionModels;
-            serializerOptions = s_jsonSerializerOptions;
         }
 
-        _console.WriteLine(JsonSerializer.Serialize(result, serializerOptions));
+        _console.WriteLine(JsonSerializer.Serialize(result, s_jsonSerializerOptions));
 
         return Task.CompletedTask;
     }
