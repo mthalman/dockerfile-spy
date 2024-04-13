@@ -1,0 +1,5 @@
+﻿[
+  {
+    "imageName": "$REPO:$TAG"
+  }
+]
