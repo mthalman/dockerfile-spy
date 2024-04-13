@@ -16,21 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="TestData\FromCommand\multi-graph-multi-leaf\command.txt" />
-    <None Remove="TestData\FromCommand\multi-graph-multi-leaf\Dockerfile" />
-    <None Remove="TestData\FromCommand\multi-graph-multi-leaf\expected-output.txt" />
-    <None Remove="TestData\FromCommand\multi-graph\command.txt" />
-    <None Remove="TestData\FromCommand\multi-graph\Dockerfile" />
-    <None Remove="TestData\FromCommand\multi-graph\expected-output.txt" />
-    <None Remove="TestData\FromCommand\multi-flat\command.txt" />
-    <None Remove="TestData\FromCommand\multi-flat\Dockerfile" />
-    <None Remove="TestData\FromCommand\multi-flat\expected-output.txt" />
-    <None Remove="TestData\FromCommand\single-flat-custom-path\command.txt" />
-    <None Remove="TestData\FromCommand\single-flat-custom-path\Dockerfile.custom" />
-    <None Remove="TestData\FromCommand\single-flat-custom-path\expected-output.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
     <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="xunit" Version="2.4.2" />
