@@ -21,6 +21,7 @@ public class FromCommand(IConsole console) : CommandWithOptions<FromCommandOptio
     public Task ExecuteCoreAsync()
     {
         Dockerfile dockerfile = Dockerfile.Parse(File.ReadAllText(Options.DockerfilePath));
+        dockerfile.ResolveVariables(options: new ResolutionOptions { RemoveEscapeCharacters = true, UpdateInline = true });
         IEnumerable<FromInstruction> fromInstructions = dockerfile.Items.OfType<FromInstruction>();
 
         List<Models.FromInstruction> fromInstructionModels = fromInstructions

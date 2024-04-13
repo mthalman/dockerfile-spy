@@ -1,0 +1,5 @@
+﻿[
+  {
+    "imageName": "base-image:my-tag"
+  }
+]
